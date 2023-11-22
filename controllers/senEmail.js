@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 const senEmail = async (req, res) => {
     console.log("Start")
     const { name, mail, message } = req.body
-    console.log(name, mail, message)
+    // console.log(name, mail, message)
 
     const mailOptions = {
         from: process.env.USER,
@@ -23,8 +23,8 @@ const senEmail = async (req, res) => {
         subject: `Portfolio message from ${name}`,
         text: `Email: ${mail}\nMessage: ${message}`
     };
-    const { from } = mailOptions
-    console.log(`from: ${from}`)
+    // const { from } = mailOptions
+    // console.log(`from: ${from}`)
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
